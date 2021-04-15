@@ -11,6 +11,7 @@
 	<?php 
 	$req = $bdd->query("SELECT film.titre, projection.date FROM film JOIN projection ON film.idFilm - projection.idFilm JOIN salle ON projection.idSalle = salle.cinema = ? AND projection.horaire >= ? AND DATE(projection.date) = ?")
 	$req->execute(array($_POST['ville'], $_POST['date'], $_POST['horaire']))	
+	
 	?>
 -->
 	<p>Pour revenir à la page d'accueil, <a href="index.php">cliquez ici</a>.</p>
