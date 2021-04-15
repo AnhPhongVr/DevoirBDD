@@ -20,12 +20,12 @@
                                      FROM film JOIN projection ON film.idFilm = projection.idFilm
                                                JOIN salle ON projection.idSalle = salle.idSalle
                                                JOIN cinéma ON salle.idCinema = cinéma.idCinema
-                                     WHERE cinéma.ville = :ville AND projection.horaire = :horaire');
-        $req->execute(array('ville' => $_POST['ville'],'horaire' => $_POST['horaire']));
+                                     WHERE cinéma.ville = :ville AND projection.horaire >= :horaire AND projection.date = :dates');
+        $req->execute(array('ville' => $_POST['ville'],'horaire' => $_POST['heure'], 'dates' => $_POST['date']));
 
     while ($donnees = $req->fetch())
 {
-	echo $donnees['idProjection'] . ' il y a ' . $donnees['titre'] . ' le '. $donnees['date'] . ' à ' . $donnees['horaire'] . ' à ' . $donnees['ville'] . '<br />';
+	echo 'il y a ' . $donnees['titre'] . ' le '. $donnees['date'] . ' à ' . $donnees['horaire'] . ' à ' . $donnees['ville'] . '<br />';
 }
 
 $req->closeCursor();
