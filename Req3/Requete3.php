@@ -1,6 +1,6 @@
 <?php
 // Model
-require 'modeleReq3.php';
+require 'modelReq3.php';
 try
 {
     $req = getReq3();
