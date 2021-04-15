@@ -16,11 +16,12 @@
     {
         die('Erreur : '.$e->getMessage());
     }
-        $req = $bdd->query('SELECT projection.idProjection, film.titre, projection.date, projection.horaire, cinéma.ville
+        $req = $bdd->prepare('SELECT projection.idProjection, film.titre, projection.date, projection.horaire, cinéma.ville
                                      FROM film JOIN projection ON film.idFilm = projection.idFilm
                                                JOIN salle ON projection.idSalle = salle.idSalle
                                                JOIN cinéma ON salle.idCinema = cinéma.idCinema
-                                     WHERE ');
+                                     WHERE cinéma.ville = :ville AND projection.horaire = :horaire');
+        $req->execute(array('ville' => $_POST['ville'],'horaire' => $_POST['horaire']));
 
     while ($donnees = $req->fetch())
 {
