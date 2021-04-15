@@ -5,7 +5,7 @@ try
 {
     $req = getReq1();
     // View
-    require 'vueReq1.php';
+    require 'viewReq1.php';
 }
 catch(Exception $e)
 {
