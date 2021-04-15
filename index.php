@@ -51,10 +51,13 @@
 	<h2>Récupérer la liste de films qui sont projetés dans deux cinémas différents groupés par entreprise/ville</h2>
 
 	<div class="requete3">
-		<form method="POST" action="Requete1.php">
-			<label>Nom de l'acteur :</label><br>
-			<input type="text" name="acteur"><br>
-			<br>
+		<form method="POST" action="Requete3.php">
+			<label>Nom de l'entreprise :</label><br>
+			<input type="text" name="entreprise"><br>
+			<label>Nom de la ville :</label><br>
+			<input type="text" name="ville"><br>
+			<label>Nom du cinéma :</label><br>
+			<input type="text" name="cinema"><br>
 			<button type="submit">Rechercher</button>
 		</form>
 	</div>
