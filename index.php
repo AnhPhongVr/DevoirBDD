@@ -21,7 +21,7 @@
 
 	<div class="requete1" id="requete1">
 		<h2>Première requête : récupérer la liste des films qui seront projetés à l'endroit, au jour et à l'heure que vous désirez</h2>
-		<form method="POST" action="Requete1.php">
+		<form method="POST" action="Req1/Requete1.php">
 			<label>Nom de la ville :</label><br>
 			<input type="text" name="ville"><br>
 			<label>Date :</label>
