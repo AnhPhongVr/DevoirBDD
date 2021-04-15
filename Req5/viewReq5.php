@@ -12,6 +12,6 @@
 $req->closeCursor();
 ?>
 
-<p>Pour revenir à la page d'accueil, <a href="index.php">cliquez ici</a>.</p>
+<p>Pour revenir à la page d'accueil, <a href="../index.php">cliquez ici</a>.</p>
 </body>
 </html>
