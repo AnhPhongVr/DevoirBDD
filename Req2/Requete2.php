@@ -3,7 +3,7 @@
 require 'modeleReq2.php';
 try
 {
-    $req = getReq1();
+    $req = getReq2();
     // View
     require 'vueReq2.php';
 }

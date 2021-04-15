@@ -47,7 +47,7 @@
 
 	<div class="requete3" id="requete3">
 		<h2>Troisième requête : récupérer la liste de cinémas qui diffusent le film de votre choix</h2>
-		<form method="POST" action="Requete3.php">
+		<form method="POST" action="Req3/Requete3.php">
 			<label>Nom du film :</label><br>
 			<input type="text" name="film"><br>
 			<br>
@@ -57,7 +57,7 @@
 
 	<div class="requete3" id="requete3">
 		<h2>Troisième requête b : récupérer la liste des films qui sont diffusés dans deux cinémas de votre choix</h2>
-		<form method="POST" action="Requete3b.php">
+		<form method="POST" action="Req3b/Requete3b.php">
 			<label>Nom du premier cinéma :</label><br>
 			<input type="text" name="cinema"><br>
 			<label>Nom du deuxième cinéma :</label><br>
@@ -70,7 +70,7 @@
 
 	<div class="requete4" id="requete4">
 		<h2>Quatrième requête : récupérer la liste d’entreprises qui ont projetées plus de 10 films pendant chaque mois de l’année de votre choix au lieu que vous indiquerez</h2>
-		<form method="POST" action="Requetes4.php">
+		<form method="POST" action="Req4/Requetes4.php">
 			<label>Date :</label><br>
 			<input type="date" name="date"><br>
 			<label>Lieu :</label><br>
@@ -83,7 +83,7 @@
 
 	<div class="requete5" id="requete5">
 		<h2>Cinquième requête : récupérer la liste de films qui sont projetés la semaine précédent la date choisi dans lesquels l'acteur choisi a joué</h2>
-		<form method="POST" action="Requete5.php">
+		<form method="POST" action="Req5/Requete5.php">
 			<label>date :</label><br>
 			<input type="date" name="date"><br>
 			<br>
