@@ -5,8 +5,8 @@
 	<title>Requetes4</title>
 </head>
 <body>
-	<p>Bonjour à tous, nous allons répondre à <b> la deuxieme requete</b>sur cette page.</p>
-	<p>La liste des <b><?php echo $_POST['entreprise']; ?></b> qui ont projetées plus de 10 films pendant haque mois de l'année <b><?php echo $_POST['date']; ?></b> à <b><?php echo $_POST['ville'];?></b>est:</p>
+	<p>Bonjour à tous, nous allons répondre à <b> la quatrième requete</b>sur cette page.</p>
+	<p>La liste des entreprises qui ont projeté plus de 10 films pendant chaque mois de l'année <b><?php echo $_POST['date']; ?></b> à <b><?php echo $_POST['ville'];?></b>est:</p>
 	<?php
 
 	try
