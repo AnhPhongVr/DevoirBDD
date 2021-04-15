@@ -20,7 +20,7 @@
 	
 
 	<div class="requete1" id="requete1">
-		<h2>Récupérer la liste des films qui seront projetés à l'endroit, au jour et à l'heure que vous désirez</h2>
+		<h2>Première requête : récupérer la liste des films qui seront projetés à l'endroit, au jour et à l'heure que vous désirez</h2>
 		<form method="POST" action="Requete1.php">
 			<label>Nom de la ville :</label><br>
 			<input type="text" name="ville"><br>
@@ -35,7 +35,7 @@
 
 
 	<div class="requete2" id="requete2">
-		<h2>Récupérer la liste des films joué par un certain acteur</h2>
+		<h2>Deuxième requête : récupérer la liste des films joué par un certain acteur</h2>
 		<form method="POST" action="Requete2.php">
 			<label>Nom de l'acteur :</label><br>
 			<input type="text" name="acteur"><br>
@@ -46,7 +46,7 @@
 
 
 	<div class="requete3" id="requete3">
-		<h2>Récupérer la liste de films qui sont projetés dans deux cinémas de votre choix groupés par entreprise/ville</h2>
+		<h2>Troisième requête : récupérer la liste de films qui sont projetés dans deux cinémas de votre choix groupés par entreprise/ville</h2>
 		<form method="POST" action="Requete3.php">
 			<label>Nom du premier cinéma :</label><br>
 			<input type="text" name="acteur"><br>
@@ -59,7 +59,7 @@
 
 
 	<div class="requete4" id="requete4">
-		<h2>Récupérer la liste d’entreprises qui ont projetées plus de 10 films pendant chaque mois de l’année de votre choix au lieu que vous indiquerez</h2>
+		<h2>Quatrième requête : récupérer la liste d’entreprises qui ont projetées plus de 10 films pendant chaque mois de l’année de votre choix au lieu que vous indiquerez</h2>
 		<form method="POST" action="Requetes4.php">
 			<label>Date :</label><br>
 			<input type="date" name="date"><br>
@@ -72,7 +72,7 @@
 
 
 	<div class="requete5" id="requete5">
-		<h2>Récupérer la liste de films qui sont projetés la semaine précédente dans lesquels un même acteur ajoué</h2>
+		<h2>Cinquième requête : récupérer la liste de films qui sont projetés la semaine précédente dans lesquels un même acteur ajoué</h2>
 		<form method="POST" action="Requete5.php">
 			<label>Nom de l'acteur :</label><br>
 			<input type="text" name="acteur"><br>
