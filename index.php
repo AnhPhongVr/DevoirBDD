@@ -82,11 +82,14 @@
 
 
 	<div class="requete5" id="requete5">
-		<h2>Cinquième requête : récupérer la liste de films qui sont projetés la semaine précédente dans lesquels un même acteur ajoué</h2>
+		<h2>Cinquième requête : récupérer la liste de films qui sont projetés la semaine précédent la date choisi dans lesquels l'acteur choisi a joué</h2>
 		<form method="POST" action="Requete5.php">
-			<label>Nom de l'acteur :</label><br>
+			<label>date :</label><br>
 			<input type="date" name="date"><br>
 			<br>
+            <label>acteur :</label><br>
+            <input type="text" name="acteur"><br>
+            <br>
 			<button type="submit">Rechercher</button>
 		</form>
 	</div>
