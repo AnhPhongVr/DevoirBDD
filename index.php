@@ -36,7 +36,7 @@
 
 	<div class="requete2" id="requete2">
 		<h2>Deuxième requête : récupérer la liste des films joué par un certain acteur</h2>
-		<form method="POST" action="Requete2.php">
+		<form method="POST" action="Req2/Requete2.php">
 			<label>Nom de l'acteur :</label><br>
 			<input type="text" name="acteur"><br>
 			<br>
