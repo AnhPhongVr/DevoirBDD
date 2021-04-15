@@ -46,12 +46,22 @@
 
 
 	<div class="requete3" id="requete3">
-		<h2>Troisième requête : récupérer la liste de films qui sont projetés dans deux cinémas de votre choix groupés par entreprise/ville</h2>
+		<h2>Troisième requête : récupérer la liste de cinémas qui diffusent le film de votre choix</h2>
 		<form method="POST" action="Requete3.php">
+			<label>Nom du film :</label><br>
+			<input type="text" name="film"><br>
+			<br>
+			<button type="submit">Rechercher</button>
+		</form>
+	</div>
+
+	<div class="requete3" id="requete3">
+		<h2>Troisième requête b : récupérer la liste des films qui sont diffusés dans deux cinémas de votre choix</h2>
+		<form method="POST" action="Requete3b.php">
 			<label>Nom du premier cinéma :</label><br>
-			<input type="text" name="acteur"><br>
+			<input type="text" name="cinema"><br>
 			<label>Nom du deuxième cinéma :</label><br>
-			<input type="text" name="acteur"><br>
+			<input type="text" name="cinema"><br>
 			<br>
 			<button type="submit">Rechercher</button>
 		</form>
