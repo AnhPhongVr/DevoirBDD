@@ -6,7 +6,7 @@
 </head>
 <body>
 	<p>Bonjour à tous, nous allons répondre à <b> la quatrième requete </b>sur cette page.</p>
-	<p>La liste des entreprises qui ont projeté plus de 3 films pendant chaque mois de l'année <b><?php echo $_POST['date']; ?></b> à <b><?php echo $_POST['lieu'];?></b> est:</p>
+	<p>La liste des entreprises qui ont projeté plus de 10 films pendant chaque mois de l'année <b><?php echo $_POST['date']; ?></b> à <b><?php echo $_POST['lieu'];?></b> est:</p>
 	<?php
 
 	try
@@ -30,7 +30,7 @@
                     JOIN salle ON salle.idCinema = cinéma.idCinema
                     JOIN film ON film.idFilm = projection.idFilm
     WHERE YEAR(projection.date) = YEAR(:annee)
-    GROUP BY MONTH(projection.date)) > 3");
+    GROUP BY MONTH(projection.date)) > 10");
 	$req->execute(array('ville' => $_POST['lieu'], 'annee' => $_POST['date']));
 
     while ($donnees = $req->fetch())

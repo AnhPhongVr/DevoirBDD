@@ -30,7 +30,7 @@
 
     while ($donnees = $req->fetch())
     {
-        echo "L'acteur " . $donnees['acteur'] . ' joue dans le film '. $donnees['nom'] . ' projeté dans le cinema ' . $donnees['nomCinema'] . ' dans le salle ' . $donnees['idSalle'] . " qui appartient à l'entreprise " . $donnees['nom'] . ' à ' . $donnees['ville'] . '<br />';
+        echo "L'acteur " . $donnees['acteur'] . ' joue dans le film '. $donnees['titre'] . ' projeté dans le cinema ' . $donnees['nomCinema'] . ' dans le salle ' . $donnees['idSalle'] . " qui appartient à l'entreprise " . $donnees['nom'] . ' à ' . $donnees['ville'] . '<br />';
     }
 
 $req->closeCursor();

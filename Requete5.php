@@ -16,15 +16,16 @@
         die('Erreur : '.$e->getMessage());
     }
     $variable = $_POST['acteur'];
-	$req = $bdd->prepare("SELECT film.titre, film.acteur, projection.date
+	$req = $bdd->prepare('SELECT film.titre, film.acteur, projection.date
     FROM film JOIN projection ON projection.idFilm = film.idFilm
-    WHERE WEEK(projection.date) = (WEEK(:date)-1) AND film.acteur LIKE "%' . $variable . '%" '
-    ");
+    WHERE projection.date >= DATE(:date) - INTERVAL DAYOFWEEK(DATE(:date))+6 DAY 
+    AND projection.date < DATE(:date) - INTERVAL DAYOFWEEK(DATE(:date))-1 DAY
+    AND film.acteur LIKE "%' . $variable . '%" ');
     $req->execute(array('date' => $_POST['date'], 'acteur' => $_POST['acteur']));
 
     while ($donnees = $req->fetch())
     {
-        echo 'il y a ' . $donnees['titre'] . ' de '. $donnees['acteur'] . '<br />';
+        echo 'il y a ' . $donnees['titre'] . ' de '. $donnees['acteur'] . ' le ' . $donnees['date'] . '<br />';
     }
 
     $req->closeCursor();
