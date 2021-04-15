@@ -18,8 +18,30 @@
         die('Erreur : '.$e->getMessage());
     }
 
-	$req = $bdd->query("SELECT entreprise.nom, FROM entreprise JOIN cinéma ON entreprise.idEntreprise = cinéma.idEntreprise
-	JOIN salle ON salle.idCinema = cinéma.idCinema JOIN projection ON projection.idSalle = salle.idSalle JOIN film ON film.idFilm = projection.idFilm
-	WHERE cinéma.ville = ? AND YEAR(projection.date) =? AND (SELECT COUNT(projection.idProjection) FROM entreprise JOIN cinéma ON entreprise.idEntreprise = cinéma.idEntreprise JOIN salle ON salle.idCinema = cinéma.idCinema")
+	$req = $bdd->prepare("
+    SELECT entreprise.nom 
+    FROM entreprise JOIN cinéma ON entreprise.idEntreprise = cinéma.idEntreprise
+	                JOIN salle ON salle.idCinema = cinéma.idCinema 
+                    JOIN projection ON projection.idSalle = salle.idSalle 
+                    JOIN film ON film.idFilm = projection.idFilm
+	WHERE cinéma.ville = :ville AND YEAR(projection.date) = YEAR(:annee) AND 
+	(SELECT COUNT(projection.idProjection) 
+    FROM entreprise JOIN cinéma ON entreprise.idEntreprise = cinéma.idEntreprise 
+                    JOIN salle ON salle.idCinema = cinéma.idCinema
+                    JOIN film ON film.idFilm = projection.idFilm
+    WHERE YEAR(projection.date) = YEAR(:annee)
+    GROUP BY MONTH(projection.date)) > 10");
+	$req->execute(array('ville' => $_POST['ville'], 'annee' => $_POST['date']))
+
+    while ($donnees = $req->fetch())
+    {
+        echo 'il y a ' . $donnees['titre'] . ' le '. $donnees['date'] . ' à ' . $donnees['horaire'] . ' à ' . $donnees['ville'] . '<br />';
+    }
+
+    $req->closeCursor();
 	
 	?>
+
+    <p>Pour revenir à la page d'accueil, <a href="index.php">cliquez ici</a>.</p>
+</body>
+</html>
