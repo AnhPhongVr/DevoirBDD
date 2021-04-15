@@ -16,11 +16,15 @@
     {
         die('Erreur : '.$e->getMessage());
     }
-        $req = $bdd->query('SELECT film.titre FROM film');
+        $req = $bdd->query('SELECT projection.idProjection, film.titre, projection.date, projection.horaire, cinéma.ville
+                                     FROM film JOIN projection ON film.idFilm = projection.idFilm
+                                               JOIN salle ON projection.idSalle = salle.idSalle
+                                               JOIN cinéma ON salle.idCinema = cinéma.idCinema
+                                     WHERE ');
 
     while ($donnees = $req->fetch())
 {
-	echo 'il y a ' . $donnees['titre'] . '<br />';
+	echo $donnees['idProjection'] . ' il y a ' . $donnees['titre'] . ' le '. $donnees['date'] . ' à ' . $donnees['horaire'] . ' à ' . $donnees['ville'] . '<br />';
 }
 
 $req->closeCursor();
